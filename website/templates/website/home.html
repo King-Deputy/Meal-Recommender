@@ -1,0 +1,99 @@
+
+
+{% extends 'website/basic.html' %}
+
+{% block title%} TosRec {% endblock %}
+ 
+ {% block css %} 
+ 
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+  
+  * {
+    font-family: "Roboto", sans-serif;
+ }
+  
+  .carousel-item {
+  height: 65vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+{% load static %}
+body{
+background-image:url({% static 'front/images/background3.jpg' %});
+background-repeat:no-repeat;
+background-size:cover;
+}
+
+
+{% endblock %}
+
+
+        {% block homeurl %} ""{% endblock %}
+        {% block abouturl %} "about/" {% endblock %}
+        {% block contacturl %} "contact/"{% endblock %}
+        {% block mealurl %} "decider/" {% endblock %}
+        {% block orderurl %} "\order/" {% endblock %}
+        
+    {% block homeactive %} active {% endblock %}
+
+{% block body %}
+
+
+
+	<div id="demo" class="container carousel slide my-4" data-ride="carousel" data-interval="2500">
+	  <!-- Indicators -->
+	  <ul class="carousel-indicators">
+		<li data-target="#demo" data-slide-to="0" class="active"></li>
+		<li data-target="#demo" data-slide-to="1"></li>
+		<li data-target="#demo" data-slide-to="2"></li>
+		<li data-target="#demo" data-slide-to="3"></li>
+	  </ul>
+	  
+	  <!-- The slideshow -->
+	  <div class="carousel-inner">
+		<div class="carousel-item active"  style="background-image: url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600')">
+    		<div class="align-bottom text-center" style="color:white;background-color:blue;width:100%;font-size:30px"> Food is fuel. Food is enjoyment. Food is necessity. </div>
+		</div>
+		
+		<div class="carousel-item" style="background-image: url('https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=600')">
+    		<div class="align-bottom text-center" style="color:white;background-color:blue;width:100%;font-size:30px"> Let food be thy medicine and medicine be thy food. </div>		
+		</div>
+		
+		<div class="carousel-item" style="background-image: url('https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=600')">
+    		<div class="align-bottom text-center" style="color:white;background-color:blue;width:100%;font-size:30px"> You are what you eat. </div>		
+		</div>
+		
+		<div class="carousel-item" style="background-image: url('https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=600')">
+    		<div class="align-bottom text-center" style="color:white;background-color:blue;width:100%;font-size:30px"> One cannot think well,love well, sleep well, if one has not dined well. </div>		
+		</div>
+		
+	  </div>
+	  
+	  <!-- Left and right controls -->
+	  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+		<span class="carousel-control-prev-icon"></span>
+	  </a>
+	  <a class="carousel-control-next" href="#demo" data-slide="next">
+		<span class="carousel-control-next-icon"></span>
+	  </a>
+	</div>
+
+    <div class="container my-5 p-4">
+        <div class="jumbotron mx-5"  style="background-image:url('https://www.itl.cat/pngfile/big/0-7755_nature-pier-bridge-d-river-water-sunset-night.jpg');background-size:cover;background-repeat:no-repeat">
+          <h1 style="font-size:45px;color:white">Hello {{request.user.first_name}} {{request.user.last_name}}</h1>
+          <p style="font-size:25px;color:white">We may forget the details of a specific meal, but we'll never forget how it made us feel. TOSREC offers the best food suggestions for you, You should try it!</p>
+          
+          <p><a class="btn btn-success btn-lg" href="\recommend/" role="button">Check Out</a></p>
+        </div>
+    </div>
+    
+ {% endblock %}
